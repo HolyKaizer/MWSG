@@ -1,10 +1,14 @@
 {
   "dependencies": {
+    "com.leopotam.ecslite": "https://github.com/Leopotam/ecslite.git",
+    "com.leopotam.ecslite.di": "https://github.com/Leopotam/ecslite-di.git",
+    "com.leopotam.ecslite.extendedsystems": "https://github.com/Leopotam/ecslite-extendedsystems.git",
+    "com.leopotam.ecslite.unityeditor": "https://github.com/Leopotam/ecslite-unityeditor.git",
     "com.unity.addressables": "2.1.0",
     "com.unity.collab-proxy": "2.3.1",
     "com.unity.feature.development": "1.0.2",
     "com.unity.render-pipelines.high-definition": "17.0.3",
-    "com.unity.timeline": "1.8.6",
+    "com.unity.timeline": "1.8.7",
     "com.unity.ugui": "2.0.0",
     "com.unity.visualscripting": "1.9.4",
     "com.unity.modules.accessibility": "1.0.0",
@@ -38,10 +42,6 @@
     "com.unity.modules.video": "1.0.0",
     "com.unity.modules.vr": "1.0.0",
     "com.unity.modules.wind": "1.0.0",
-    "com.unity.modules.xr": "1.0.0",
-    "com.leopotam.ecslite": "https://github.com/Leopotam/ecslite.git",
-    "com.leopotam.ecslite.di": "https://github.com/Leopotam/ecslite-di.git",
-    "com.leopotam.ecslite.unityeditor": "https://github.com/Leopotam/ecslite-unityeditor.git",
-    "com.leopotam.ecslite.extendedsystems": "https://github.com/Leopotam/ecslite-extendedsystems.git"
+    "com.unity.modules.xr": "1.0.0"
   }
 }
