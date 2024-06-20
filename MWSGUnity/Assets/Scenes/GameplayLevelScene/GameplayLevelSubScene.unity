@@ -214,6 +214,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1837612664}
   - component: {fileID: 1837612665}
+  - component: {fileID: 1837612666}
+  - component: {fileID: 1837612667}
   m_Layer: 0
   m_Name: BattleCore
   m_TagString: Untagged
@@ -248,8 +250,32 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa4952e1412c41468363f10441826650, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PlayerCharacterPrefab: {fileID: 7214976959151228069, guid: 434d1d424b3ec493890ffdaa08a70bbc, type: 3}
   RandomSeed: 2342
+--- !u!114 &1837612666
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1837612663}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b3df704db16d4093a63460c19841dde6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PlayerCharacterPrefab: {fileID: 3239855521778905790, guid: 147e08022fe8142299485ab2a164ef0d, type: 3}
+--- !u!114 &1837612667
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1837612663}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 868e2c01078e4f8dbc034fe2ad349e93, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

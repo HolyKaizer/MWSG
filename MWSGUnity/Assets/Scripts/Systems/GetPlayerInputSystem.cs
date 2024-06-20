@@ -19,18 +19,20 @@ namespace Systems
 		protected override void OnStartRunning()
 		{
 			_inputActions.Enable();
+			_inputActions.Battle.Enable();
 			_playerEntity = SystemAPI.GetSingletonEntity<PlayerCharacterTagComponent>();
 		}
 
 		protected override void OnUpdate()
 		{
 			var curMoveInput = _inputActions.Battle.Move.ReadValue<Vector2>();
-			SystemAPI.SetSingleton(new PlayerCharacterMoveInput{Value = curMoveInput});
+			SystemAPI.SetSingleton(new MoveInput{Value = curMoveInput});
 		}
 		
 		protected override void OnStopRunning()
 		{
 			_inputActions.Disable();
+			_inputActions.Battle.Disable();
 			_playerEntity = Entity.Null;
 		}
 	}
