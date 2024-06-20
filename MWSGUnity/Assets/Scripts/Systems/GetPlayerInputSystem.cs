@@ -1,4 +1,5 @@
 using Components;
+using Components.Tags;
 using Unity.Entities;
 using UnityEngine;
 
@@ -12,7 +13,7 @@ namespace Systems
 
 		protected override void OnCreate()
 		{
-			RequireForUpdate<PlayerCharacterTagComponent>();		
+			RequireForUpdate<PlayerCharacterTag>();		
 			_inputActions = new MainMWSG_InputActions();
 		}
 
@@ -20,7 +21,7 @@ namespace Systems
 		{
 			_inputActions.Enable();
 			_inputActions.Battle.Enable();
-			_playerEntity = SystemAPI.GetSingletonEntity<PlayerCharacterTagComponent>();
+			_playerEntity = SystemAPI.GetSingletonEntity<PlayerCharacterTag>();
 		}
 
 		protected override void OnUpdate()

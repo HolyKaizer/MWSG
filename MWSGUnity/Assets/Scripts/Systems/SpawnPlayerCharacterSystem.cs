@@ -1,5 +1,5 @@
 using Components;
-using TagsComponent;
+using Components.Tags;
 using Unity.Burst;
 using Unity.Entities;
 using Unity.Mathematics;

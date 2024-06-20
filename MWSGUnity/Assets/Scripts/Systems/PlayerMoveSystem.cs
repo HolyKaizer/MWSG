@@ -1,9 +1,9 @@
 using Components;
+using Components.Tags;
 using Unity.Burst;
 using Unity.Entities;
 using Unity.Mathematics;
 using Unity.Transforms;
-using UnityEngine;
 
 namespace Systems
 {
@@ -36,14 +36,13 @@ namespace Systems
 		public float DeltaTime;
 		public float2 MoveInput;
 
-		private void Execute(ref LocalTransform transform, in MoveSpeedComponent moveSpeedComponent, in PlayerCharacterTagComponent tagComponent)
+		private void Execute(ref LocalTransform transform, in MoveSpeedComponent moveSpeedComponent, in PlayerCharacterTag tag)
 		{
 			transform.Position.xz += MoveInput * moveSpeedComponent.Value * DeltaTime;
 			if (math.lengthsq(MoveInput) > float.Epsilon)
 			{
 				var forward = new float3(MoveInput.x, 0, MoveInput.y);
 				transform.Rotation = quaternion.LookRotation(forward, math.up());
-				Debug.Log($"Move by {MoveInput}, cur pos = {transform.Position},  cur rot={transform.Rotation.value}, tagComponent={tagComponent}");
 			}
 		}
 	}

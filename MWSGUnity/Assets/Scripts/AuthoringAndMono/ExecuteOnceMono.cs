@@ -1,4 +1,4 @@
-using TagsComponent;
+using Components.Tags;
 using Unity.Entities;
 using UnityEngine;
 

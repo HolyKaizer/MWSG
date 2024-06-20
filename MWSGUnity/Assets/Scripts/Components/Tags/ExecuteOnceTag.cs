@@ -1,6 +1,6 @@
 using Unity.Entities;
 
-namespace TagsComponent
+namespace Components.Tags
 {
 	public struct ExecuteOnceTag : IComponentData
 	{
