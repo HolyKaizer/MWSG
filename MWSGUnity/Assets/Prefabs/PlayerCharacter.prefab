@@ -332,9 +332,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1368119274878305164}
   - component: {fileID: 6302190955846674289}
-  - component: {fileID: 5559172978258931695}
   - component: {fileID: 5697429986119058985}
   - component: {fileID: 4123490925266606772}
+  - component: {fileID: -8118940293565846116}
   m_Layer: 0
   m_Name: PlayerCharacter
   m_TagString: Untagged
@@ -381,19 +381,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &5559172978258931695
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3239855521778905790}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2fb757bd46edfe349a52b4ea886d67e7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  boneStrippingMask: {fileID: 101100000, guid: 87216dbdf7dd8a047817768e0beb23b2, type: 2}
 --- !u!114 &5697429986119058985
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -406,7 +393,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 98f9efa249fc43b48343398c3dd9142d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MoveSpeed: 1
+  MoveSpeed: 3
 --- !u!114 &4123490925266606772
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -419,6 +406,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fea2fe910a2a4842a3737ef9ddf5c073, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &-8118940293565846116
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3239855521778905790}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2fb757bd46edfe349a52b4ea886d67e7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  boneStrippingMask: {fileID: 0}
 --- !u!1 &3352011857549615744
 GameObject:
   m_ObjectHideFlags: 0
