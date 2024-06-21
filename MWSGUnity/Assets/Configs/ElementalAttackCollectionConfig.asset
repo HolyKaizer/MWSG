@@ -16,12 +16,12 @@ MonoBehaviour:
   - Speed: 5
     TravelTime: 2
     Type: 1
-    ProjectilePrefab: {fileID: 6519644815729125621, guid: 8e73eef6662ff46d58fc9b258292411f, type: 3}
+    ProjectilePrefab: {fileID: 6519644815729125621, guid: f9112d18be1da4499be41d22c0e65b71, type: 3}
   - Speed: 3
     TravelTime: 3
     Type: 2
-    ProjectilePrefab: {fileID: 6519644815729125621, guid: f9112d18be1da4499be41d22c0e65b71, type: 3}
+    ProjectilePrefab: {fileID: 6519644815729125621, guid: 81777860593a74cda976beb113da8b99, type: 3}
   - Speed: 4
     TravelTime: 4
     Type: 3
-    ProjectilePrefab: {fileID: 6519644815729125621, guid: 81777860593a74cda976beb113da8b99, type: 3}
+    ProjectilePrefab: {fileID: 6519644815729125621, guid: 8e73eef6662ff46d58fc9b258292411f, type: 3}

@@ -7,6 +7,7 @@ namespace Components.InfoComponents
 		public ElementalType Type;
 		public float TravelTime;
 		public float Speed;
-		public Entity EntityPrefab;
+		public float DamageAmount;
+		public BlobPtr<Entity> EntityPrefab;
 	}
 }

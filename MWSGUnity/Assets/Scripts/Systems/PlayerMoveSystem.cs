@@ -21,13 +21,11 @@ namespace Systems
 		public void OnUpdate(ref SystemState state)
 		{
 			var deltaTime = SystemAPI.Time.DeltaTime;
-			var jobHandle = new PlayerMoveJob
+			new PlayerMoveJob
 			{
 				DeltaTime = deltaTime,
 				MoveInput = SystemAPI.GetSingleton<MoveInput>().Value
-			}.ScheduleParallel(state.Dependency);
-
-			state.Dependency = jobHandle;
+			}.Schedule();
 		}
 	}
 	

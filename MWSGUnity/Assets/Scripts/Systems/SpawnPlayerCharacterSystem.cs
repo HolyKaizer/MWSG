@@ -24,9 +24,12 @@ namespace Systems
 		{
 			foreach (var (_, spawnComponent) in SystemAPI.Query<RefRO<ExecuteOnceTag>, RefRO<SpawnPlayerCharacterComponent>>())
 			{
-				var ecb = SystemAPI.GetSingleton<BeginInitializationEntityCommandBufferSystem.Singleton>().CreateCommandBuffer(state.WorldUnmanaged);
-				var entity = ecb.Instantiate(spawnComponent.ValueRO.PlayerCharacterPrefab);
-				ecb.SetComponent(entity, new LocalTransform
+				if (!state.EntityManager.Exists(spawnComponent.ValueRO.PlayerCharacterPrefab))
+				{
+					Debug.LogError($"Doensnt't exists enityty: {spawnComponent.ValueRO.PlayerCharacterPrefab}");
+				}
+				var entity = state.EntityManager.Instantiate(spawnComponent.ValueRO.PlayerCharacterPrefab);
+				state.EntityManager.SetComponentData(entity, new LocalTransform
 				{
 					Position = spawnComponent.ValueRO.SpawnPosition,
 					Rotation = quaternion.identity,

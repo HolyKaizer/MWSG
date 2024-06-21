@@ -1,8 +1,5 @@
-using System;
-
 namespace Components
 {
-	[Serializable]
 	public enum ElementalType
 	{
 		None = 0,

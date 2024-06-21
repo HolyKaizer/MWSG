@@ -16,6 +16,7 @@ namespace ScriptableConfigs
 			public float TravelTime;
 			public ElementalType Type;
 			public GameObject ProjectilePrefab;
+			public float Damage;
 		}
 	}
 }

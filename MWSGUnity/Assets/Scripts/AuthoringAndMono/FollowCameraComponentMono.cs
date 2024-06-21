@@ -1,4 +1,5 @@
 using Components;
+using Components.ClassComponents;
 using Unity.Entities;
 using Unity.Mathematics;
 using UnityEngine;
@@ -14,6 +15,7 @@ namespace AuthoringAndMono
 			public override void Bake(FollowCameraComponentMono authoring)
 			{
 				var mainCamera = GameObject.FindWithTag("MainCamera");
+				
 				if (mainCamera != null)
 				{
 					AddComponentObject(GetEntity(TransformUsageFlags.Dynamic), new FollowCameraComponent{Offset = authoring.Offset, CameraTransform = mainCamera.transform});

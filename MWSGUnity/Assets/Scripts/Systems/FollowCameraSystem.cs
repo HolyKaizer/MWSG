@@ -1,4 +1,5 @@
 using Components;
+using Components.ClassComponents;
 using Components.Tags;
 using Unity.Collections;
 using Unity.Entities;

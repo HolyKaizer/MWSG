@@ -4,6 +4,6 @@ namespace Components
 {
 	public struct DamageDealerComponent : IComponentData
 	{
-		private float Value;
+		public float Value;
 	}
 }

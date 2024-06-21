@@ -4,6 +4,6 @@ namespace Components.InfoComponents
 {
 	public struct ElementalAttackInfosBlobAsset
 	{
-		public BlobArray<ElementalAttackItemInfo> ElementsInfo;
+		public BlobArray<BlobAssetReference<ElementalAttackItemInfo>> ElementsInfo;
 	}
 }

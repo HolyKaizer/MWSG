@@ -2,7 +2,6 @@ using Components;
 using Unity.Entities;
 using Unity.Mathematics;
 using UnityEngine;
-using UnityEngine.Serialization;
 
 namespace AuthoringAndMono
 {
@@ -17,8 +16,7 @@ namespace AuthoringAndMono
 	{
 		public override void Bake(SpawnPlayerCharacterMono authoring)
 		{
-			var entity = GetEntity(authoring, TransformUsageFlags.None);
-			AddComponent(entity, new SpawnPlayerCharacterComponent
+			AddComponent(GetEntity(authoring, TransformUsageFlags.None), new SpawnPlayerCharacterComponent
 			{
 				PlayerCharacterPrefab = GetEntity(authoring.PlayerCharacterPrefab, TransformUsageFlags.Dynamic),
 				SpawnScale = authoring.SpawnScale,
