@@ -1,4 +1,5 @@
 using Components;
+using Components.InfoComponents;
 using Components.Tags;
 using Unity.Burst;
 using Unity.Entities;
@@ -36,9 +37,9 @@ namespace Systems
 		public float DeltaTime;
 		public float2 MoveInput;
 
-		private void Execute(ref LocalTransform transform, in MoveSpeedComponent moveSpeedComponent, in PlayerCharacterTag tag)
+		private void Execute(ref LocalTransform transform, in MoveSpeedInfoComponent moveSpeedInfoComponent, in PlayerCharacterTag tag)
 		{
-			transform.Position.xz += MoveInput * moveSpeedComponent.Value * DeltaTime;
+			transform.Position.xz += MoveInput * moveSpeedInfoComponent.Value * DeltaTime;
 			if (math.lengthsq(MoveInput) > float.Epsilon)
 			{
 				var forward = new float3(MoveInput.x, 0, MoveInput.y);

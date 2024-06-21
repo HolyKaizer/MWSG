@@ -14,7 +14,14 @@ namespace AuthoringAndMono
 			public override void Bake(FollowCameraComponentMono authoring)
 			{
 				var mainCamera = GameObject.FindWithTag("MainCamera");
-				AddComponentObject(GetEntity(TransformUsageFlags.Dynamic), new FollowCameraComponent{Offset = authoring.Offset, CameraTransform = mainCamera.transform});
+				if (mainCamera != null)
+				{
+					AddComponentObject(GetEntity(TransformUsageFlags.Dynamic), new FollowCameraComponent{Offset = authoring.Offset, CameraTransform = mainCamera.transform});
+				}
+				else
+				{
+					Debug.Log("Cannot find MainCamera ");
+				}
 			}
 		}
 	}

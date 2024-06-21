@@ -2,6 +2,7 @@ using Components;
 using Components.Tags;
 using Unity.Entities;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 namespace Systems
 {
@@ -9,11 +10,11 @@ namespace Systems
 	public partial class GetPlayerInputSystem : SystemBase
 	{
 		private MainMWSG_InputActions _inputActions;
-		private Entity _playerEntity;
+		private Entity _inputEntity;
 
 		protected override void OnCreate()
 		{
-			RequireForUpdate<PlayerCharacterTag>();		
+			RequireForUpdate<BattleCoreComponent>();		
 			_inputActions = new MainMWSG_InputActions();
 		}
 
@@ -21,7 +22,15 @@ namespace Systems
 		{
 			_inputActions.Enable();
 			_inputActions.Battle.Enable();
-			_playerEntity = SystemAPI.GetSingletonEntity<PlayerCharacterTag>();
+			_inputEntity = SystemAPI.GetSingletonEntity<InputListenerTagComponent>();
+			_inputActions.Battle.Attack.performed += OnAttackPerformed;
+		}
+
+		private void OnAttackPerformed(InputAction.CallbackContext obj)
+		{
+			if(!SystemAPI.Exists(_inputEntity)) return;
+			
+			SystemAPI.SetComponentEnabled<SimpleAttackInputComponent>(_inputEntity, true);
 		}
 
 		protected override void OnUpdate()
@@ -32,9 +41,10 @@ namespace Systems
 		
 		protected override void OnStopRunning()
 		{
+			_inputActions.Battle.Attack.performed -= OnAttackPerformed;
 			_inputActions.Disable();
 			_inputActions.Battle.Disable();
-			_playerEntity = Entity.Null;
+			_inputEntity = Entity.Null;
 		}
 	}
 }

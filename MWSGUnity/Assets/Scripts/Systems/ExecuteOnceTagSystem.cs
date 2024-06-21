@@ -1,7 +1,6 @@
 using Components.Tags;
 using Unity.Burst;
 using Unity.Entities;
-using UnityEngine;
 
 namespace Systems
 {
@@ -24,7 +23,6 @@ namespace Systems
 				.CreateCommandBuffer(state.WorldUnmanaged);
 			foreach (var (_, entity) in SystemAPI.Query<RefRO<ExecuteOnceTag>>().WithEntityAccess())
 			{
-				Debug.Log($"Entity with Index={entity.Index} removed ExecuteOnceTag");
 				ecb.RemoveComponent<ExecuteOnceTag>(entity);
 			}
 		}

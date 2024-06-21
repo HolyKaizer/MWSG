@@ -1,4 +1,5 @@
 using Components;
+using Components.InfoComponents;
 using Unity.Entities;
 using UnityEngine;
 
@@ -13,7 +14,7 @@ namespace AuthoringAndMono
 	{
 		public override void Bake(MoveSpeedComponentMono authoring)
 		{
-			AddComponent(GetEntity(authoring, TransformUsageFlags.Dynamic), new MoveSpeedComponent { Value = authoring.MoveSpeed});
+			AddComponent(GetEntity(authoring, TransformUsageFlags.Dynamic), new MoveSpeedInfoComponent { Value = authoring.MoveSpeed});
 		}
 	}
 }

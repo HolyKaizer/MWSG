@@ -335,6 +335,7 @@ GameObject:
   - component: {fileID: 5697429986119058985}
   - component: {fileID: 4123490925266606772}
   - component: {fileID: -8118940293565846116}
+  - component: {fileID: 5236453607809675213}
   m_Layer: 0
   m_Name: PlayerCharacter
   m_TagString: Untagged
@@ -419,6 +420,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   boneStrippingMask: {fileID: 0}
+--- !u!114 &5236453607809675213
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3239855521778905790}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c465887e1d14400bbeaf0b61ecdd316d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Config: {fileID: 11400000, guid: e306d05bf881a4dae8c805afd6fdca8a, type: 2}
 --- !u!1 &3352011857549615744
 GameObject:
   m_ObjectHideFlags: 0

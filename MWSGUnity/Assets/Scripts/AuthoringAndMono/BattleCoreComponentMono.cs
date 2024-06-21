@@ -20,7 +20,6 @@ namespace AuthoringAndMono
 			{
 				Value = Random.CreateFromIndex(authoring.RandomSeed)
 			});
-			AddComponent(GetEntity(authoring, TransformUsageFlags.None), new MoveInput());
 		}
 	}
 }

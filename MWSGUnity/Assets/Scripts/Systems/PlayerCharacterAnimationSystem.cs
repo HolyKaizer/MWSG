@@ -7,7 +7,7 @@ using Unity.Mathematics;
 namespace Systems
 {
 	[UpdateInGroup(typeof(PresentationSystemGroup))]
-	public partial struct PlayerRhukankaAnimationSystem : ISystem
+	public partial struct PlayerCharacterAnimationSystem : ISystem
 	{
 		[BurstCompile]
 		public void OnCreate(ref SystemState state)

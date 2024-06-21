@@ -7,7 +7,7 @@ using Unity.Transforms;
 namespace Systems
 {
 	[UpdateInGroup(typeof(PresentationSystemGroup), OrderLast = true)]
-	public partial class UpdateCameraFollowSystem : SystemBase
+	public partial class FollowCameraSystem : SystemBase
 	{
 		private EntityQuery followCameraQuery;
 		protected override void OnCreate()

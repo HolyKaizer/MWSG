@@ -28,9 +28,9 @@ namespace Systems
 				var entity = ecb.Instantiate(spawnComponent.ValueRO.PlayerCharacterPrefab);
 				ecb.SetComponent(entity, new LocalTransform
 				{
-					Position = new float3(0, 1, 0),
+					Position = spawnComponent.ValueRO.SpawnPosition,
 					Rotation = quaternion.identity,
-					Scale = 0.35f
+					Scale = spawnComponent.ValueRO.SpawnScale
 				});
 				Debug.Log($"There's player instantiate:entity.Index={entity.Index} entity.Version={entity.Version} entity.GetHashCode={entity.GetHashCode()}");
 			}
