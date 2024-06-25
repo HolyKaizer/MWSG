@@ -11,10 +11,8 @@ namespace Systems
 		[BurstCompile]
 		public void OnUpdate(ref SystemState state)
 		{
-			foreach (var (_, entity) in SystemAPI.Query<RefRO<ExecuteOnceTag>>().WithEntityAccess())
-			{
-				state.EntityManager.RemoveComponent<ExecuteOnceTag>(entity);
-			}
+			var entitiesToDestroy = SystemAPI.QueryBuilder().WithAll<ExecuteOnceTag>().Build();
+			state.EntityManager.AddComponent<DestroyTag>(entitiesToDestroy);
 		}
 	}
 }

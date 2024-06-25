@@ -1,5 +1,7 @@
 using Components;
+using Components.Tags;
 using Unity.Burst;
+using Unity.Collections;
 using Unity.Entities;
 
 namespace Systems
@@ -24,7 +26,7 @@ namespace Systems
 			}
 
 			var entitiesToDestroy = SystemAPI.QueryBuilder().WithDisabled<DestroyEntityAfterTimeComponent>().Build();
-			state.EntityManager.DestroyEntity(entitiesToDestroy);
+			state.EntityManager.AddComponent<DestroyTag>(entitiesToDestroy);
 		}
 	}
 }

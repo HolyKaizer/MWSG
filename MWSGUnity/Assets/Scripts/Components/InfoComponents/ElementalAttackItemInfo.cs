@@ -8,6 +8,6 @@ namespace Components.InfoComponents
 		public float TravelTime;
 		public float Speed;
 		public float DamageAmount;
-		public BlobPtr<Entity> EntityPrefab;
+		public EntityPrefab EntityPrefab;
 	}
 }
