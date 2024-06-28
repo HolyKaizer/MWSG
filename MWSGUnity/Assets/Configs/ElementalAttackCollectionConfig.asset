@@ -17,11 +17,19 @@ MonoBehaviour:
     TravelTime: 2
     Type: 1
     ProjectilePrefab: {fileID: 6519644815729125621, guid: f9112d18be1da4499be41d22c0e65b71, type: 3}
+    Damage: 0
   - Speed: 3
     TravelTime: 3
     Type: 2
     ProjectilePrefab: {fileID: 6519644815729125621, guid: 81777860593a74cda976beb113da8b99, type: 3}
+    Damage: 0
   - Speed: 4
     TravelTime: 4
     Type: 3
     ProjectilePrefab: {fileID: 6519644815729125621, guid: 8e73eef6662ff46d58fc9b258292411f, type: 3}
+    Damage: 0
+  - Speed: 10
+    TravelTime: 1.5
+    Type: 4
+    ProjectilePrefab: {fileID: 6519644815729125621, guid: 785f7392d292d4ed7826d8e27ce810c5, type: 3}
+    Damage: 0

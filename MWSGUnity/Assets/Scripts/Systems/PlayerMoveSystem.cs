@@ -8,6 +8,7 @@ using Unity.Transforms;
 
 namespace Systems
 {
+	[BurstCompile]
 	[UpdateBefore(typeof(TransformSystemGroup))]
 	public partial struct PlayerMoveSystem : ISystem
 	{
@@ -21,11 +22,12 @@ namespace Systems
 		public void OnUpdate(ref SystemState state)
 		{
 			var deltaTime = SystemAPI.Time.DeltaTime;
-			new PlayerMoveJob
+			var moveJob = new PlayerMoveJob
 			{
 				DeltaTime = deltaTime,
 				MoveInput = SystemAPI.GetSingleton<MoveInput>().Value
-			}.Schedule();
+			}.Schedule(state.Dependency);
+			state.Dependency = moveJob;
 		}
 	}
 	

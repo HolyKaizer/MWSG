@@ -3,6 +3,7 @@ using Unity.Entities;
 
 namespace Components
 {
+	[BurstCompile]
 	public partial struct OrbManagementSystem : ISystem
 	{
 		[BurstCompile]

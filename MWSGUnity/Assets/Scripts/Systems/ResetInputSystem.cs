@@ -5,6 +5,7 @@ using Unity.Entities;
 
 namespace Systems
 {
+	[BurstCompile]
 	[UpdateInGroup(typeof(SimulationSystemGroup), OrderLast = true)]
 	[UpdateAfter(typeof(EndSimulationEntityCommandBufferSystem))]
 	public partial struct ResetInputSystem : ISystem

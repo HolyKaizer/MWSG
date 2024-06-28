@@ -22,18 +22,18 @@ namespace Systems
 		[BurstCompile]
 		public void OnUpdate(ref SystemState state)
 		{
-			foreach (var (_, spawnComponent) in SystemAPI.Query<RefRO<ExecuteOnceTag>, RefRO<SpawnPlayerCharacterComponent>>())
+			foreach (var spawnComponentRef in SystemAPI.Query<RefRO<SpawnPlayerCharacterComponent>>().WithAll<ExecuteOnceTag>())
 			{
-				if (!state.EntityManager.Exists(spawnComponent.ValueRO.PlayerCharacterPrefab))
+				if (!state.EntityManager.Exists(spawnComponentRef.ValueRO.PlayerCharacterPrefab))
 				{
-					Debug.LogError($"Doensnt't exists enityty: {spawnComponent.ValueRO.PlayerCharacterPrefab}");
+					Debug.LogError($"Doensnt't exists enityty: {spawnComponentRef.ValueRO.PlayerCharacterPrefab}");
 				}
-				var entity = state.EntityManager.Instantiate(spawnComponent.ValueRO.PlayerCharacterPrefab);
+				var entity = state.EntityManager.Instantiate(spawnComponentRef.ValueRO.PlayerCharacterPrefab);
 				state.EntityManager.SetComponentData(entity, new LocalTransform
 				{
-					Position = spawnComponent.ValueRO.SpawnPosition,
+					Position = spawnComponentRef.ValueRO.SpawnPosition,
 					Rotation = quaternion.identity,
-					Scale = spawnComponent.ValueRO.SpawnScale
+					Scale = spawnComponentRef.ValueRO.SpawnScale
 				});
 				Debug.Log($"There's player instantiate:entity.Index={entity.Index} entity.Version={entity.Version} entity.GetHashCode={entity.GetHashCode()}");
 			}

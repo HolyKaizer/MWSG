@@ -6,6 +6,7 @@ using Unity.Mathematics;
 
 namespace Systems
 {
+	[BurstCompile]
 	[UpdateInGroup(typeof(PresentationSystemGroup))]
 	public partial struct PlayerCharacterAnimationSystem : ISystem
 	{

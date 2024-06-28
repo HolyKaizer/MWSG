@@ -1,5 +1,4 @@
-using Components;
-using Components.ClassComponents;
+using Components.ManagedComponents;
 using Components.Tags;
 using Unity.Collections;
 using Unity.Entities;
@@ -8,21 +7,21 @@ using Unity.Transforms;
 namespace Systems
 {
 	[UpdateInGroup(typeof(PresentationSystemGroup), OrderLast = true)]
-	public partial class FollowCameraSystem : SystemBase
+	public partial struct FollowCameraSystem : ISystem
 	{
 		private EntityQuery followCameraQuery;
-		protected override void OnCreate()
+
+		public void OnCreate(ref SystemState state)
 		{
-			base.OnCreate();
-			followCameraQuery = GetEntityQuery(ComponentType.ReadOnly<FollowCameraComponent>());
+			followCameraQuery = state.GetEntityQuery(ComponentType.ReadOnly<FollowCameraComponent>());
 		}
 
-		protected override void OnUpdate()
+		public void OnUpdate(ref SystemState state)
 		{
 			if (followCameraQuery.CalculateEntityCount() <= 0) return;
 			
 			var followCameraEntity = followCameraQuery.ToEntityArray(Allocator.Temp)[0];
-			var followCameraComponent = EntityManager.GetComponentObject<FollowCameraComponent>(followCameraEntity);
+			var followCameraComponent = SystemAPI.ManagedAPI.GetComponent<FollowCameraComponent>(followCameraEntity);
 			foreach (var (transform, _) in SystemAPI.Query<RefRO<LocalTransform>, RefRO<PlayerCharacterTag>>())
 			{
 				followCameraComponent.CameraTransform.position = transform.ValueRO.Position + followCameraComponent.Offset;

@@ -5,6 +5,8 @@ using Unity.Entities;
 
 namespace Systems
 {
+	[BurstCompile]
+	[UpdateInGroup(typeof(PresentationSystemGroup), OrderLast = true)]
 	public partial struct DestroySystem : ISystem
 	{
 		private EntityQuery _query;

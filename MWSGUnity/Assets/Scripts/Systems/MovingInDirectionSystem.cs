@@ -5,6 +5,7 @@ using Unity.Transforms;
 
 namespace Systems
 {
+	[BurstCompile]
 	[UpdateInGroup(typeof(SimulationSystemGroup))]
 	public partial struct MovingInDirectionSystem : ISystem
 	{
