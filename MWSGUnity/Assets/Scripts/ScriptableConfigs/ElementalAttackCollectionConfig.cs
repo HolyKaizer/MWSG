@@ -13,7 +13,7 @@ namespace ScriptableConfigs
 		public struct ElementalInfos
 		{
 			public float Speed;
-			public float TravelTime;
+			public float Distance;
 			public ElementalType Type;
 			public GameObject ProjectilePrefab;
 			public float Damage;

@@ -1,5 +1,3 @@
-using Unity.Entities;
-
 namespace Components.InfoComponents
 {
 	public struct ElementalAttackItemInfo

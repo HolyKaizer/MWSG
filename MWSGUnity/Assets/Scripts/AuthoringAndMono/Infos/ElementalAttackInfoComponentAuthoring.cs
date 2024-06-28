@@ -21,7 +21,7 @@ namespace AuthoringAndMono.Infos
 				{
 					var configInfo = authoring.Config.Infos[index];
 					var entityPrefab = this.GetEntityPrefab(configInfo.ProjectilePrefab, TransformUsageFlags.None);
-					array[index] = new ElementalAttackItemInfo { Type = configInfo.Type, TravelTime = configInfo.TravelTime, Speed = configInfo.Speed, EntityPrefab = entityPrefab };
+					array[index] = new ElementalAttackItemInfo { Type = configInfo.Type, TravelTime = configInfo.Distance / configInfo.Speed, Speed = configInfo.Speed, EntityPrefab = entityPrefab, DamageAmount = configInfo.Damage};
 				}
 
 				var blobReference = builder.CreateBlobAssetReference<ElementalAttackInfosBlobAsset>(Allocator.Persistent);

@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 37bed6810acf434d8595b362afa8cea2, type: 3}
   m_Name: InitialPlayerOrbsConfig
   m_EditorClassIdentifier: 
-  InitialOrbs: 03000000020000000400000001000000
+  InitialOrbs: 03000000010000000400000002000000

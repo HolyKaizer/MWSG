@@ -40,11 +40,6 @@ namespace Systems
 		private void Execute(ref LocalTransform transform, in MoveSpeedInfoComponent moveSpeedInfoComponent, in PlayerCharacterTag tag)
 		{
 			transform.Position.xz += MoveInput * moveSpeedInfoComponent.Value * DeltaTime;
-			if (math.lengthsq(MoveInput) > float.Epsilon)
-			{
-				var forward = new float3(MoveInput.x, 0, MoveInput.y);
-				transform.Rotation = quaternion.LookRotation(forward, math.up());
-			}
 		}
 	}
 }

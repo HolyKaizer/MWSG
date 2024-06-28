@@ -20,6 +20,8 @@ namespace Systems
 		[BurstCompile]
 		public void OnUpdate(ref SystemState state)
 		{
+			if(SystemAPI.QueryBuilder().WithAll<DestroyTag>().Build().IsEmpty) return;
+			
 			var entityList = new NativeList<Entity>(Allocator.Temp);
 
 			var linkedLookup = SystemAPI.GetBufferLookup<LinkedEntityGroup>();
